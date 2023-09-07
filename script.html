@@ -1,44 +1,82 @@
-<html>
-  <head>
-    <title>Coding Speed Test Challenge</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
-  </head>
-  <body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="assets/script.css"/>
+
+    <title>Coding Quiz</title>
+</head>
+
+<body>
     <header>
-      <div class= "large-font"></div>
-      <button class="start-button">Start</button>
+    <!-- Display high score and timer on top left and right corners respectively -->
+    <section id = "score_keeper" style="display: none">
+        <input type="button" value="View High Scores" onclick="view_high_scores()"></br>
+        Score: <var id="score"> </var>
+    </section>
+
+    <section id= "countdownTimer" style="display: none">
+        Time Remaining: <span id="timer"></span>
+    </section>
+
     </header>
 
-    <main>
-      <section>
-        <div class="card word-guess">
-          <div class="large-font word-blanks">J _ v _ S c r_ _t</div>
-        </div>
-      </section>
 
-      <section>
-        <div class="card results">
-          <div class = "win-loss-container">
-          <div>
-          <h2>Wins: <span class="win">0 </span> </h2>
-          <h2>Losses: <span class="lose">0</span></h2>
-        </div>
-          <button class="reset-button">Reset Score</button>
-      </div>
-          <div class= "card timer">
-            <div class = "timer-text">
-            <div class="large-font timer-count">10</div>
-            <h3>seconds remaining</h3>
-          </div>
-        
-          </div>
-        </div>
-      </section>
-    </main>
-    <script src="assets/js/script.js"></script>
-  </body>
-</html>
+    <!-- Home Container with quiz rules and Start button -->
+    <container>
+    <div id="information">
+        <h1>Welcome to the Code Quiz!</h1>
+        <p>Try answering the following code-related questions within the time limit. You have 75 seconds to complete the quiz.</p> 
+        <p> Don't forget: For each incorrect answer, you will be penalized 5 seconds from the timer. If the timer hits 0, it's game over!</p>
+        <p><strong>Ready to test your coding knowledge? Let's get started!</strong></p>
+        <br>
+        <button id="startBtn">Start Quiz</button>
+    </div>
+    </container>
 
+        <!-- QUIZ CONTAINER -->
+        <div id="quizContainer" style="display: none"> 
+            <h2 id="questionHeading"></h2>
+            <!-- <div id="answerChoices"> -->
+                <ul>
+                    <div id="choices">
+                        <button id="answerChoiceA"></button>
+                    </div>
+                    <div>
+                        <button id="answerChoiceB"></button>
+                    </div>
+                    <div>
+                        <button id="answerChoiceC"></button>
+                    </div>
+                    <div>
+                        <button id="answerChoiceD"></button>
+                    </div>
+                </ul>
+            </div>
+</body>
 
+<!-- RESULTS & HIGH SCORES CONTAINER -->
+<section id="AnswerResponse">
+</section>
+
+<div id= "game_over" style="display: none">
+    <h2> Game Over</h2>
+    Your Score was: <var id="end_score"> </var>
+    </br>
+    Initials: <input type="text"  value="initials" id="initials">
+    </br>
+    <input type="button" value="submit" id="submit_intials" onclick="submit_score()">
+</div>
+
+<div id="high_scores_page" style="display: none" >
+    <h2> High Scores </h2>
+    <div id="high_scores"></div>
+        <input type="button" value="Go Back" id="go_back" onclick="go_home()">
+        <input type="button" id="Clear Highscores" value ="clear" onclick="clear_hs()">
+    </div>
+
+    <script src="assets/script.js"></script>
+
+</html> 
