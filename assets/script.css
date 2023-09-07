@@ -22,18 +22,18 @@
   }
   
   #scoreDisplay:hover {
-    background-color: #ddd;
+    background-color: #dddddde6;
     color: black;
   }
   
   #timerDisplay {
-    color: darkcyan;
+    color: rgb(109, 140, 86);
     float: right;
     }
   
   #timerDisplay:hover
   {
-    background-color: #ddd;
+    background-color: #87afdd87;
     color: black;
   }
   
